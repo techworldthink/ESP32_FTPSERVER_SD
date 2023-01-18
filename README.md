@@ -1,4 +1,4 @@
-# ESP32_FTPSERVER_SD
+# ESP32 FTP SERVER USING SD CARD
 
 ## Simple FTP Server for Espressif ESP32 Based on the work from
 #### https://github.com/HenrikSte/ESP32FTPServer
@@ -12,5 +12,5 @@
 ![alt text](https://github.com/techworldthink/ESP32_FTPSERVER_SD/raw/main/Images/sd_esp32_connections.png)
 
 ## How to access server?
-##### Replace IP address in the below url & paste it into file explorer
+#### Replace IP address in the below url & paste it into file explorer
 #### ftp://esp32:esp32@192.168.1.7/
