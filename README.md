@@ -8,6 +8,9 @@
 ## Modifications
 #### Sub directories listing issue fixed.
 
+## Connections
+![alt text](https://github.com/techworldthink/ESP32_FTPSERVER_SD/raw/main/Images/sd_esp32_connections.png)
+
 ## How to access server?
 ##### Replace IP address in the below url & paste it into file explorer
 #### ftp://esp32:esp32@192.168.1.7/
