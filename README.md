@@ -9,5 +9,5 @@
 #### Sub directories listing issue fixed.
 
 ## How to access server?
-##### replace ip address
-#### ftp://esp32:esp32@192.168.1.7/ABC 
+##### Replace IP address in the below url & paste it into file explorer
+#### ftp://esp32:esp32@192.168.1.7/
