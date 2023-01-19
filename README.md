@@ -7,6 +7,7 @@
 
 ## Modifications
 #### Sub directories listing issue fixed.
+#### Sub directories accessing issue fixed.
 
 ## Connections
 ![alt text](https://github.com/techworldthink/ESP32_FTPSERVER_SD/raw/main/Images/sd_esp32_connections.png)
