@@ -17,10 +17,56 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-//  2017: modified by @robo8080
-//  2019: modified by @HenrikSte
-//  2023: modified by @techworldthink
 
+/*  
+ *  2017: modified by @robo8080
+ *  2019: modified by @HenrikSte
+ *  2023: modified by @techworldthink
+ */
+
+/*
+ * cmdStatus 
+ * 0 - disconnect client (check client.connected())
+ * 1 - Ftp server waiting for connection
+ * 2 - Ftp server idle
+ * 3 - Ftp server waiting for user identity
+ * 4 - Ftp server waiting for user registration
+ * 5 - Ftp server waiting for user command
+ * 
+ * transferStatus
+ * 0 - data store / retrieve failed
+ * 1 - Retrieve data
+ * 2 - Store data
+ * 
+ * command
+ * CDUP - Change to Parent Directory
+ * CWD  - Change Working Directory
+ * PWD  - Print Directory
+ * QUIT - disconnect client
+ * MODE - Transfer Mode
+ * PASV - Passive Connection management
+ * PORT - Data Port
+ * STRU - File Structure
+ * TYPE - Data Type
+ * ABOR - Abort transfer
+ * DELE - Delete a File
+ * LIST - List
+ * MLSD - Listing for Machine Processing (see RFC 3659)
+ * NLST - Name List
+ * NOOP
+ * RETR - Retrieve
+ * STOR - Store
+ * MKD  - Make Directory
+ * RMD  - Remove a Directory
+ * RNFR - Rename From
+ * RNTO - Rename To
+ * FEAT - New Features
+ * MDTM - File Modification Time (see RFC 3659)
+ * SIZE - Size of the file
+ * SITE - System command
+ */
+
+ 
 #include "ESP32FtpServer.h"
 #include <WiFi.h>
 #include <WiFiClient.h>
