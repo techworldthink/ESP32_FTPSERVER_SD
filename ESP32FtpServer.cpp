@@ -18,55 +18,55 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*  
- *  2017: modified by @robo8080
- *  2019: modified by @HenrikSte
- *  2023: modified by @techworldthink
- */
+/*
+    2017: modified by @robo8080
+    2019: modified by @HenrikSte
+    2023: modified by @techworldthink
+*/
 
 /*
- * cmdStatus 
- * 0 - disconnect client (check client.connected())
- * 1 - Ftp server waiting for connection
- * 2 - Ftp server idle
- * 3 - Ftp server waiting for user identity
- * 4 - Ftp server waiting for user registration
- * 5 - Ftp server waiting for user command
- * 
- * transferStatus
- * 0 - data store / retrieve failed
- * 1 - Retrieve data
- * 2 - Store data
- * 
- * command
- * CDUP - Change to Parent Directory
- * CWD  - Change Working Directory
- * PWD  - Print Directory
- * QUIT - disconnect client
- * MODE - Transfer Mode
- * PASV - Passive Connection management
- * PORT - Data Port
- * STRU - File Structure
- * TYPE - Data Type
- * ABOR - Abort transfer
- * DELE - Delete a File
- * LIST - List
- * MLSD - Listing for Machine Processing (see RFC 3659)
- * NLST - Name List
- * NOOP
- * RETR - Retrieve
- * STOR - Store
- * MKD  - Make Directory
- * RMD  - Remove a Directory
- * RNFR - Rename From
- * RNTO - Rename To
- * FEAT - New Features
- * MDTM - File Modification Time (see RFC 3659)
- * SIZE - Size of the file
- * SITE - System command
- */
+   cmdStatus
+   0 - disconnect client (check client.connected())
+   1 - Ftp server waiting for connection
+   2 - Ftp server idle
+   3 - Ftp server waiting for user identity
+   4 - Ftp server waiting for user registration
+   5 - Ftp server waiting for user command
 
- 
+   transferStatus
+   0 - data store / retrieve failed
+   1 - Retrieve data
+   2 - Store data
+
+   command
+   CDUP - Change to Parent Directory
+   CWD  - Change Working Directory
+   PWD  - Print Directory
+   QUIT - disconnect client
+   MODE - Transfer Mode
+   PASV - Passive Connection management
+   PORT - Data Port
+   STRU - File Structure
+   TYPE - Data Type
+   ABOR - Abort transfer
+   DELE - Delete a File
+   LIST - List
+   MLSD - Listing for Machine Processing (see RFC 3659)
+   NLST - Name List
+   NOOP
+   RETR - Retrieve
+   STOR - Store
+   MKD  - Make Directory
+   RMD  - Remove a Directory
+   RNFR - Rename From
+   RNTO - Rename To
+   FEAT - New Features
+   MDTM - File Modification Time (see RFC 3659)
+   SIZE - Size of the file
+   SITE - System command
+*/
+
+
 #include "ESP32FtpServer.h"
 #include <WiFi.h>
 #include <WiFiClient.h>
@@ -883,16 +883,16 @@ boolean FtpServer::makePath( char * fullName, char * param ) {
 }
 
 /* Calculate year, month, day, hour, minute and second
- * From first parameter sent by MDTM command (YYYYMMDDHHMMSS)
- * 
- * parameters:
- *   pyear, pmonth, pday, phour, pminute and psecond: pointer of
- *     variables where to store data
- *
- * return:
- *    0 if parameter is not YYYYMMDDHHMMSS
- *    length of parameter + space
- */
+   From first parameter sent by MDTM command (YYYYMMDDHHMMSS)
+
+   parameters:
+     pyear, pmonth, pday, phour, pminute and psecond: pointer of
+       variables where to store data
+
+   return:
+      0 if parameter is not YYYYMMDDHHMMSS
+      length of parameter + space
+*/
 
 uint8_t FtpServer::getDateTime( uint16_t * pyear, uint8_t * pmonth, uint8_t * pday,
                                 uint8_t * phour, uint8_t * pminute, uint8_t * psecond ) {
@@ -923,16 +923,16 @@ uint8_t FtpServer::getDateTime( uint16_t * pyear, uint8_t * pmonth, uint8_t * pd
 }
 
 /* Create string YYYYMMDDHHMMSS from date and time
- *
- * parameters:
- *    date, time
- *    tstr: where to store the string. Must be at least 15 characters long
- *
- * return:
- *    pointer to tstr
+
+   parameters:
+      date, time
+      tstr: where to store the string. Must be at least 15 characters long
+
+   return:
+      pointer to tstr
 */
 
-char * FtpServer::makeDateTimeStr( char * tstr, uint16_t date, uint16_t time ){
+char * FtpServer::makeDateTimeStr( char * tstr, uint16_t date, uint16_t time ) {
   sprintf( tstr, "%04u%02u%02u%02u%02u%02u",
            (( date & 0xFE00 ) >> 9 ) + 1980, ( date & 0x01E0 ) >> 5, date & 0x001F,
            ( time & 0xF800 ) >> 11, ( time & 0x07E0 ) >> 5, ( time & 0x001F ) << 1 );
