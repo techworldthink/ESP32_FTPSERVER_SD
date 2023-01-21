@@ -15,3 +15,6 @@
 ## How to access server?
 #### Replace IP address in the below url & paste it into file explorer
 #### ftp://esp32:esp32@192.168.1.7/
+
+## Drawbacks
+### Slower download speed!

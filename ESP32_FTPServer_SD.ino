@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include "ESP32FtpServer.h"
 
-const char* ssid = "Black_hat:)";
-const char* password = "1010101010";
+const char* ssid = "********";
+const char* password = "**********";
 
 FtpServer ftpSrv;
 

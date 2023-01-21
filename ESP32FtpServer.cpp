@@ -522,7 +522,7 @@ boolean FtpServer::processCommand() {
     if ( strlen( parameters ) == 0 )
       client.println( "501 No file name");
     else if ( makePath( path )) {
-      file = SD.open(path, "r");
+      file = SD.open(path, "rb");
       if ( !file)
         client.println( "550 File " + String(parameters) + " not found");
       else if ( !file )
